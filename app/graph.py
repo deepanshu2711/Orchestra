@@ -25,6 +25,18 @@ class Graph:
         e = self.edges[cur]
         return e(state)  if callable(e) else e 
 
+    def validate(self):
+        if self.entry not in self.nodes:
+            raise ValueError(f"entry {self.entry} is not a node")
+        for name in self.nodes:
+            if name not in self.edges:
+                raise ValueError(f"node {name} has no outgoing edge")
+        for a, b in self.edges.items():
+             if not callable(b) and b != END and b not in self.nodes:
+                 raise ValueError(f"edge {a!r} -> unknown node {b!r}")
+
+        return self
+
     def run(self,state:dict) -> dict:
         cur = self.entry
         while cur != END:

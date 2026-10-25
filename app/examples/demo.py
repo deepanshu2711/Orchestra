@@ -10,6 +10,7 @@ def main():
     graph.edge("b",END)
 
     graph.start("a")
+    graph.validate()
 
     print(graph.run({}))
 
