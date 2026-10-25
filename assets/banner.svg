@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1C232D"/>
+    </pattern>
+    <radialGradient id="glow" cx="78%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#F5A524" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#F5A524" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop offset="0" stop-color="#0A0D12" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0A0D12" stop-opacity="1"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#3A4554"/>
+    </marker>
+    <marker id="arrA" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#F5A524"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="520" fill="#0A0D12"/>
+  <rect width="1600" height="520" fill="url(#dots)"/>
+  <rect width="1600" height="520" fill="url(#glow)"/>
+
+  <!-- Left: wordmark -->
+  <g font-family="Inter, 'Inter Display', sans-serif">
+    <text x="92" y="150" font-family="'DejaVu Sans Mono', monospace" font-size="15" letter-spacing="3" fill="#F5A524">DURABLE MULTI-AGENT RUNTIME</text>
+    <text x="86" y="262" font-family="'Inter Display', Inter, sans-serif" font-weight="700" font-size="124" letter-spacing="-4" fill="#F3F5F7">Orchestra</text>
+    <text x="92" y="318" font-size="23" fill="#9AA5B1">Multi-agent workflows that survive crashes, replay</text>
+    <text x="92" y="350" font-size="23" fill="#9AA5B1">deterministically, pause for humans, and stop</text>
+    <text x="92" y="382" font-size="23" fill="#9AA5B1">before the bill does.</text>
+
+    <g font-family="'DejaVu Sans Mono', monospace" font-size="13" fill="#C9D1D9">
+      <rect x="92"  y="420" width="148" height="32" rx="16" fill="#11161D" stroke="#2A3340"/>
+      <text x="166" y="441" text-anchor="middle">crash recovery</text>
+      <rect x="250" y="420" width="188" height="32" rx="16" fill="#11161D" stroke="#2A3340"/>
+      <text x="344" y="441" text-anchor="middle">deterministic replay</text>
+      <rect x="448" y="420" width="170" height="32" rx="16" fill="#11161D" stroke="#2A3340"/>
+      <text x="533" y="441" text-anchor="middle">human-in-the-loop</text>
+      <rect x="628" y="420" width="150" height="32" rx="16" fill="#11161D" stroke="#2A3340"/>
+      <text x="703" y="441" text-anchor="middle">budget governor</text>
+    </g>
+  </g>
+
+  <!-- Right: workflow graph -->
+  <g font-family="'DejaVu Sans Mono', monospace" font-size="13" text-anchor="middle">
+    <!-- edges -->
+    <g fill="none" stroke-width="1.6">
+      <line x1="942" y1="180" x2="968" y2="180" stroke="#F5A524" marker-end="url(#arrA)"/>
+      <line x1="1082" y1="180" x2="1108" y2="180" stroke="#F5A524" marker-end="url(#arrA)"/>
+      <!-- fan-out -->
+      <path d="M1222,180 C1240,180 1238,90 1256,90"   stroke="#F5A524" marker-end="url(#arrA)"/>
+      <path d="M1222,180 C1240,180 1238,150 1256,150" stroke="#F5A524" marker-end="url(#arrA)"/>
+      <path d="M1222,180 C1240,180 1238,210 1256,210" stroke="#3A4554" marker-end="url(#arr)"/>
+      <path d="M1222,180 C1240,180 1238,270 1256,270" stroke="#3A4554" marker-end="url(#arr)"/>
+      <!-- join -->
+      <path d="M1370,90  C1388,90  1388,180 1406,180" stroke="#3A4554" marker-end="url(#arr)"/>
+      <path d="M1370,150 C1388,150 1388,180 1406,180" stroke="#3A4554"/>
+      <path d="M1370,210 C1388,210 1388,180 1406,180" stroke="#3A4554"/>
+      <path d="M1370,270 C1388,270 1388,180 1406,180" stroke="#3A4554"/>
+    </g>
+
+    <!-- nodes -->
+    <g>
+      <rect x="830"  y="160" width="112" height="40" rx="8" fill="#1A1408" stroke="#F5A524"/>
+      <text x="886"  y="185" fill="#F3F5F7">requirements</text>
+
+      <rect x="970"  y="160" width="112" height="40" rx="8" fill="#1A1408" stroke="#F5A524"/>
+      <text x="1026" y="185" fill="#F3F5F7">clarifier</text>
+      <!-- pause badge -->
+      <circle cx="1080" cy="160" r="11" fill="#F5A524"/>
+      <rect x="1075.5" y="154.5" width="3" height="11" rx="1" fill="#0A0D12"/>
+      <rect x="1081.5" y="154.5" width="3" height="11" rx="1" fill="#0A0D12"/>
+      <text x="1026" y="226" font-size="11" fill="#F5A524" opacity="0.85">awaiting human</text>
+
+      <rect x="1110" y="160" width="112" height="40" rx="8" fill="#1A1408" stroke="#F5A524"/>
+      <text x="1166" y="185" fill="#F3F5F7">supervisor</text>
+
+      <rect x="1258" y="70"  width="112" height="40" rx="8" fill="#1A1408" stroke="#F5A524"/>
+      <text x="1314" y="95"  fill="#F3F5F7">db_expert</text>
+      <rect x="1258" y="130" width="112" height="40" rx="8" fill="#1A1408" stroke="#F5A524"/>
+      <text x="1314" y="155" fill="#F3F5F7">cache_expert</text>
+      <rect x="1258" y="190" width="112" height="40" rx="8" fill="#11161D" stroke="#2A3340" stroke-dasharray="4 3"/>
+      <text x="1314" y="215" fill="#8B96A3">api_expert</text>
+      <rect x="1258" y="250" width="112" height="40" rx="8" fill="#11161D" stroke="#2A3340" stroke-dasharray="4 3"/>
+      <text x="1314" y="275" fill="#8B96A3">cdn_expert</text>
+
+      <rect x="1408" y="160" width="112" height="40" rx="8" fill="#11161D" stroke="#2A3340"/>
+      <text x="1464" y="185" fill="#8B96A3">review</text>
+    </g>
+
+    <!-- commit ticks from graph to log -->
+    <g stroke="#2A3340" stroke-dasharray="2 4" stroke-width="1.2">
+      <line x1="886"  y1="200" x2="886"  y2="334"/>
+      <line x1="1166" y1="200" x2="1166" y2="334"/>
+      <line x1="1314" y1="290" x2="1314" y2="334"/>
+    </g>
+  </g>
+
+  <!-- Event log -->
+  <g font-family="'DejaVu Sans Mono', monospace">
+    <text x="830" y="352" font-size="12" letter-spacing="1.5" fill="#6B7684">EVENTS · APPEND-ONLY · seq per run</text>
+
+    <g font-size="12">
+      <rect x="830"  y="368" width="132" height="50" rx="6" fill="#11161D" stroke="#2A3340"/>
+      <text x="842"  y="388" fill="#6B7684" font-size="11">#001</text>
+      <text x="842"  y="406" fill="#C9D1D9">run.started</text>
+
+      <rect x="970"  y="368" width="132" height="50" rx="6" fill="#11161D" stroke="#2A3340"/>
+      <text x="982"  y="388" fill="#6B7684" font-size="11">#009</text>
+      <text x="982"  y="406" fill="#C9D1D9">model.responded</text>
+
+      <rect x="1110" y="368" width="132" height="50" rx="6" fill="#11161D" stroke="#2A3340"/>
+      <text x="1122" y="388" fill="#6B7684" font-size="11">#010</text>
+      <text x="1122" y="406" fill="#C9D1D9">state.patched</text>
+
+      <rect x="1250" y="368" width="132" height="50" rx="6" fill="#11161D" stroke="#2A3340"/>
+      <text x="1262" y="388" fill="#6B7684" font-size="11">#017</text>
+      <text x="1262" y="406" fill="#C9D1D9">branch.forked</text>
+
+      <rect x="1390" y="368" width="132" height="50" rx="6" fill="#1A1408" stroke="#F5A524"/>
+      <text x="1402" y="388" fill="#F5A524" font-size="11">#023 · head</text>
+      <text x="1402" y="406" fill="#F3F5F7">interrupt.raised</text>
+
+      <rect x="1530" y="368" width="70" height="50" rx="6" fill="#11161D" stroke="#2A3340" stroke-dasharray="4 3"/>
+    </g>
+    <rect x="1500" y="360" width="100" height="66" fill="url(#fade)"/>
+
+    <text x="830" y="452" font-size="13" fill="#9AA5B1">state = fold(events)  <tspan fill="#6B7684">— the log is the truth.</tspan></text>
+  </g>
+</svg>
