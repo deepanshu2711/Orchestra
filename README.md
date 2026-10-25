@@ -1,3 +1,5 @@
+![Orchestra: a durable multi-agent runtime](assets/banner.png)
+
 # Orchestra
 
 **A durable multi-agent runtime.** Orchestra runs multi-agent workflows the way a bank runs transactions: every step is written to an append-only log, nothing is lost when a worker dies, any run can be replayed, a run can pause for a human for days, and a runaway agent is stopped before it burns your budget.
